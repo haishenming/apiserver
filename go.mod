@@ -5,6 +5,7 @@ require (
 	github.com/gin-contrib/sse v0.0.0-20170109093832-22d885f9ecc7 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/golang/protobuf v1.2.0 // indirect
+	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/mattn/go-isatty v0.0.4 // indirect
 	github.com/shirou/gopsutil v2.18.10+incompatible
 	github.com/spf13/pflag v1.0.3

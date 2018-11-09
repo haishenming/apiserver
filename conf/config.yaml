@@ -8,3 +8,15 @@ name: apiserver
 url: http://127.0.0.1:6663
 # pingServer函数尝试的次数...
 max_ping_count: 10
+
+
+# 日志
+log:
+  writers: file,stdout
+  logger_level: DEBUG
+  logger_file: log/apiserver.log
+  log_format_test: false
+  rolling_policy: size
+  log_rotate_date: 1
+  log_rotate_size: 1024
+  log_backup_count: 7
