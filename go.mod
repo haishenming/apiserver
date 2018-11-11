@@ -10,7 +10,9 @@ require (
 	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a // indirect
 	github.com/lexkong/log v0.0.0-20180607165131-972f9cd951fc
 	github.com/mattn/go-isatty v0.0.4 // indirect
+	github.com/mitchellh/mapstructure v1.1.2 // indirect
 	github.com/shirou/gopsutil v2.18.10+incompatible
+	github.com/spf13/cast v1.3.0 // indirect
 	github.com/spf13/pflag v1.0.3
 	github.com/spf13/viper v1.2.1
 	github.com/ugorji/go/codec v0.0.0-20181022190402-e5e69e061d4f // indirect
