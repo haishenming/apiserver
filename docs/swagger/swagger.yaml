@@ -1,0 +1,47 @@
+definitions:
+  user.CreateRequest:
+    properties:
+      password:
+        example: string
+        type: string
+      username:
+        example: string
+        type: string
+    type: object
+  user.CreateResponse:
+    properties:
+      username:
+        example: string
+        type: string
+    type: object
+info:
+  contact:
+    name: API Support
+  description: This is a sample server celler server.
+  license: {}
+  title: Swagger Example API
+  version: "1.0"
+paths:
+  /v1/user/:
+    post:
+      consumes:
+      - application/json
+      description: 创建一个用户
+      parameters:
+      - description: user info
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/user.CreateRequest'
+          type: object
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/user.CreateResponse'
+            type: object
+      summary: 创建用户
+swagger: "2.0"

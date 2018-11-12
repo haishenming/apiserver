@@ -1,0 +1,71 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is a sample server celler server.",
+        "title": "Swagger Example API",
+        "contact": {
+            "name": "API Support"
+        },
+        "license": {},
+        "version": "1.0"
+    },
+    "paths": {
+        "/v1/user/": {
+            "post": {
+                "description": "创建一个用户",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "创建用户",
+                "parameters": [
+                    {
+                        "description": "user info",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/user.CreateRequest"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "type": "object",
+                            "$ref": "#/definitions/user.CreateResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "user.CreateRequest": {
+            "type": "object",
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "example": "string"
+                },
+                "username": {
+                    "type": "string",
+                    "example": "string"
+                }
+            }
+        },
+        "user.CreateResponse": {
+            "type": "object",
+            "properties": {
+                "username": {
+                    "type": "string",
+                    "example": "string"
+                }
+            }
+        }
+    }
+}
