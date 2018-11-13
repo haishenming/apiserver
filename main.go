@@ -4,6 +4,7 @@ import (
 	"apiserver/config"
 	"apiserver/model"
 	"apiserver/router"
+	"apiserver/router/middleware"
 	"errors"
 	"github.com/gin-gonic/gin"
 	"github.com/lexkong/log"
@@ -48,7 +49,10 @@ func main() {
 	// 创建gin实例
 	g := gin.New()
 
-	middlewares := []gin.HandlerFunc{}
+	middlewares := []gin.HandlerFunc{
+		middleware.RequestID(),
+		middleware.Logging(),
+	}
 
 	router.Load(
 		g,
@@ -63,6 +67,16 @@ func main() {
 	}()
 
 	g.GET("/swagger/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+	// 启动https
+	cert := viper.GetString("tls.cert")
+	key := viper.GetString("tls.key")
+	if cert != "" && key != "" {
+		go func() {
+			log.Infof("Start to listening the incoming requests on https address: %s", viper.GetString("tls.addr"))
+			log.Infof(http.ListenAndServeTLS(viper.GetString("tls.addr"), cert, key, g).Error())
+		}()
+	}
 
 	log.Infof("Start to listening the incoming requests on http address: %s", viper.GetString("addr"))
 	log.Infof(http.ListenAndServe(viper.GetString("addr"), g).Error())

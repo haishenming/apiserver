@@ -2,3 +2,10 @@
 
 # idea
 .idea
+
+# tls key
+/conf/server.crt
+/conf/server.key
+
+# log
+log/
