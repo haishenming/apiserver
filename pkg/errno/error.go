@@ -46,6 +46,7 @@ func IsErrUserNotFound(err error) bool {
 	return code == ErrUserNotFound.Code
 }
 
+// 解析错误的文字信息
 func DecodeErr(err error) (int, string) {
 	if err == nil {
 		return OK.Code, OK.Message
