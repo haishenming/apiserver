@@ -3,7 +3,7 @@ package middleware
 import (
 	"net/http"
 	"time"
-	
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -38,7 +38,7 @@ func Secure(c *gin.Context) {
 	if c.Request.TLS != nil {
 		c.Header("Strict-Transport-Security", "max-age=31536000")
 	}
-	
+
 	// Also consider adding Content-Security-Policy headers
 	// c.Header("Content-Security-Policy", "script-src 'self' https://cdnjs.cloudflare.com")
 }
