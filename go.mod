@@ -4,7 +4,7 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/fsnotify/fsnotify v1.4.7
 	github.com/ghodss/yaml v1.0.0 // indirect
-	github.com/gin-contrib/pprof v0.0.0-20180827024024-a27513940d36 // indirect
+	github.com/gin-contrib/pprof v0.0.0-20180827024024-a27513940d36
 	github.com/gin-contrib/sse v0.0.0-20170109093832-22d885f9ecc7 // indirect
 	github.com/gin-gonic/gin v1.3.0
 	github.com/go-openapi/jsonreference v0.17.2 // indirect
